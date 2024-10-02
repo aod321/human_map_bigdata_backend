@@ -5,6 +5,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from typing import List, Dict, Any, Union, Optional
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 # Load environment variables
 load_dotenv()
@@ -31,6 +32,9 @@ class ParticipantInfo(BaseModel):
     gender: str
     phone: str
     catchTrialCorrect: Optional[str] = None
+    experimentStartDateTime: Optional[str] = None
+    experimentEndDateTime: Optional[str] = None
+    experimentDuration: Optional[int] = None
 
 class TrialData(BaseModel):
     trial_id: int
@@ -42,6 +46,8 @@ class TrialData(BaseModel):
     reaction_time: int
     timestamp: int
     catch_trial_correct: Optional[str] = None
+    trial_start_datetime: Optional[str] = None
+    trial_end_datetime: Optional[str] = None
 
 class ExperimentData(BaseModel):
     participantInfo: ParticipantInfo
