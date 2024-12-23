@@ -32,6 +32,8 @@ class ParticipantInfo(BaseModel):
     gender: str
     phone: str
     catchTrialCorrect: Optional[str] = None
+    user_id: str
+    questionnaire_id: str
     experimentStartDateTime: Optional[str] = None
     experimentEndDateTime: Optional[str] = None
     experimentDuration: Optional[int] = None
